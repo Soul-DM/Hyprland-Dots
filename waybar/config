@@ -1,0 +1,122 @@
+{
+"style": "/home/soul/.config/waybar/style.css",
+"layer": "top",
+"position": "top",
+"height": 30, // Waybar height (to be removed for auto height)
+    "width": 1920, // Waybar width
+"modules-left": [
+"tray",
+"wlr/workspaces"
+],
+"modules-center": [
+"custom/waybar-mpris",
+],
+"modules-right": [
+"custom/clipboard",
+"pulseaudio",
+"clock",
+"network"
+],
+"tray": {
+   "padding": 10,
+    "spacing": 10,
+    "icon-size": 16,
+    "icon-margin": 5,
+    "max-icon-size": 20,
+    "scroll": false,
+    "scroll-step": 4,
+    "sort": false,
+},
+
+"wlr/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+                        "1":"調",
+                        "2": "視",
+                        "3": "樓",
+                        "4": "阮",
+                        "5": "龎",
+                        "6":"拾",
+                        "7":"謁",
+                        "8":"聯",
+                        "9":"者",
+            },
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
+        "on-click": "activate"
+
+},
+
+"custom/waybar-mpris": {
+   "return-type": "json",
+    "exec": "waybar-mpris --autofocus ",
+    "on-click": "waybar-mpris --send toggle",
+     "on-scroll-up": "waybar-mpris --send next",
+     "on-scroll-down": "waybar-mpris --send prev",
+    "escape": true,
+},
+"custom/clipboard": {
+        "format": "車",
+        "return-type": "json",
+        // Here "-l top_right -x -15 -y 10" doesn't matter as '-n' mode is used
+        // Window position is managed in Hyperland config's windowrulev2
+        "on-click": "pkill wofi || cliphist list | wofi --dmenu -p clippick -l top_right -x -15 -y 10 -n | cliphist decode | wl-copy",
+        "on-click-middle": "rm -f ~/.cache/cliphist/db",
+        "on-click-right": "pkill wofi || cliphist list | wofi --dmenu -p clippick -l top_right -x -15 -y 10 -n | cliphist delete",
+        "escape": true
+    },
+"pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%", // {format_source}
+        "format-bluetooth": "{icon} {volume}%", // {format_source}
+        "format-bluetooth-muted": "", // {format_source}
+        "format-muted": "", // {format_source}
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+"clock": {
+        "timezone": "CET",
+        "format": " {:%d <small>%a</small> %H:%M}",
+        "format": " {:%a %b %d %Y | %H:%M}",
+        "format-alt": " {:%A %B %d %Y (%V) | %r}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar-weeks-pos": "right",
+        "today-format": "<span color='#f38ba8'><b><u>{}</u></b></span>",
+        "format-calendar": "<span color='#f2cdcd'><b>{}</b></span>",
+        "format-calendar-weeks": "<span color='#94e2d5'><b>W{:%U}</b></span>",
+        "format-calendar-weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+        "interval": 60
+    },
+
+"network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format": "↕{bandwidthTotalBytes}",
+        "format-disconnected": "{icon} No Internet",
+        "format-linked": " {ifname} (No IP)",
+        "format-alt": "↕{bandwidthUpBytes} | ↕{bandwidthDownBytes}",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}  {gwaddr}",
+        "tooltip-format-wifi": "{icon} {essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{icon} {ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "{icon} Disconnected",
+        "on-click-right": "nm-connection-editor",
+        "format-icons": {
+            "ethernet": "",
+            "disconnected": "⚠",
+            "wifi": [
+                "睊",
+                "直"
+            ]
+        },
+        "interval": 2
+
+ },
+ }
+
