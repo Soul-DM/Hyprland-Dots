@@ -1,0 +1,165 @@
+@import "/home/soul/.config/waybar/mocha.css";
+* {
+    border: none;
+    border-radius: 20px;
+    font-family: "Hack Nerd Font Mono Bold";
+    font-size: 20px;
+    min-height: 0;
+}
+
+/*Entire Bar*/
+#waybar {
+  background: transparent;
+  color: @text;
+}
+/*workspaces*/
+#workspaces * {
+  font-size: 20px;
+}
+#workspaces button label{
+    color: 	@lavender ;
+    font-weight: bolder;
+}
+#workspaces button.active label{
+    color: @base;
+    font-weight: bolder;
+}
+#workspaces{
+    background-color: transparent;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 25px;
+}
+#workspaces button{
+    box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
+    background-color: @crust ;
+    border-radius: 15px;
+    margin-right: 10px;
+    padding: 10px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    font-weight: bolder;
+    color: 	@scrust ;
+    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.68);
+}
+#workspaces button.active{
+    padding-right: 20px;
+    box-shadow: rgba(0, 0, 0, 0.288) 2 2 5 2px;
+    padding-left: 20px;
+    padding-bottom: 3px;
+    background: @text;
+    background-size: 400% 400%;
+    animation: gradient_f 20s ease-in-out infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+
+/*waybar-mpris*/
+#custom-waybar-mpris{
+font-size:15px;
+}
+#custom-waybar-mpris{
+   font-size:15px;
+  background-color: transparent;
+  color: @teal;
+  background: @mantle;
+  animation: gradient_f 20s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-right: 20px;
+  padding-left:20px;
+}
+/*systemtray*/
+#tray {
+  background-color: transparent;
+  background: @mantle;
+  background-size: 400% 400%;
+  animation: gradient_f 20s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 25px;
+  padding: 10px;
+  padding-top: 4px;
+  padding-bottom: 3px;
+}
+
+#custom-clipboard {
+font-size: 15px;
+}
+#custom-clipboard {
+  background-color: transparent;
+  color: @yellow;
+  background: @mantle;
+  animation: gradient_f 20s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-right: 5px;
+  padding-left:30px;
+}
+/*audio*/
+#pulseaudio{
+font-size:15px;
+}
+#pulseaudio {
+  background-color: transparent;
+  color: @red;
+  background: @mantle;
+  animation: gradient_f 20s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-right: 15px;
+  padding-left:20px;
+}
+/*clock*/
+#clock {
+font-size: 15px;
+}
+#clock label{
+    color: @lavender;
+    font-weight:  bolder;
+}
+#clock {
+  background-color: transparent;
+  color: @lavender;
+  background: @mantle;
+  animation: gradient_f 20s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-right: 15px;
+}
+
+#network{
+font-size:15px;
+}
+#network {
+  background-color: transparent;
+  color: @sapphire;
+  background: @mantle;
+  animation: gradient_f 20s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-right: 20px;
+  margin-right:10px;
+  }
+
